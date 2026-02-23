@@ -37,10 +37,7 @@ jobs:
         env:
           NODE_ENV: production
           # 저장소 이름에 맞게 base 경로 설정
-          # 저장소 이름이 username.github.io인 경우: VITE_BASE_PATH: '/'
-          # 일반 저장소인 경우: VITE_BASE_PATH: '/저장소이름/'
-          # 예: VITE_BASE_PATH: '/trip-os/'
-          VITE_BASE_PATH: '/'
+          VITE_BASE_PATH: '/tripOS/'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
