@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Vercel은 루트 도메인에 배포되므로 base는 '/'로 설정
   base: process.env.VITE_BASE_PATH || '/',
   plugins: [
     react(),
