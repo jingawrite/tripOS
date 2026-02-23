@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Category } from '../types/schedule';
 import { categoryMeta } from '../lib/categoryMeta';
 import { useAdProvider } from '../lib/AdProvider';
