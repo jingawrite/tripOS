@@ -4,8 +4,6 @@ import TopBar from '../components/TopBar';
 import ExchangeCard from '../components/ExchangeCard';
 import ScheduleCard from '../components/ScheduleCard';
 import PlaceholderCard from '../components/PlaceholderCard';
-import AdSlot from '../components/AdSlot';
-import { categoryMeta } from '../lib/categoryMeta';
 import {
   DndContext,
   closestCenter,
@@ -47,34 +45,6 @@ const HomePage = () => {
   const placeholderCount = useMemo(() => {
     return Math.max(0, scheduleSlots - scheduleCards.length);
   }, [scheduleSlots, scheduleCards.length]);
-
-  // contextual ad를 위한 카테고리 선택 (가장 많은 카테고리 또는 첫 번째 광고 가능 카테고리)
-  const contextualCategory = useMemo(() => {
-    if (editMode || scheduleCards.length === 0) {
-      return null;
-    }
-
-    // 광고 가능한 카테고리 중 가장 많이 사용된 것 찾기
-    const adEligibleCategories = scheduleCards
-      .filter((s) => {
-        const meta = categoryMeta[s.category];
-        return meta?.adEligible;
-      })
-      .map((s) => s.category);
-
-    if (adEligibleCategories.length === 0) {
-      return null;
-    }
-
-    // 가장 많이 사용된 카테고리 반환
-    const counts: Record<string, number> = {};
-    adEligibleCategories.forEach((cat) => {
-      counts[cat] = (counts[cat] || 0) + 1;
-    });
-
-    const mostCommon = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
-    return mostCommon ? (mostCommon[0] as typeof scheduleCards[0]['category']) : null;
-  }, [scheduleCards, editMode]);
 
   // PointerSensor with activationConstraint for long press (편집 모드에서만 활성화)
   const sensors = useSensors(
@@ -141,13 +111,6 @@ const HomePage = () => {
           ))}
         </div>
       </DndContext>
-
-      {/* Contextual Ad Slot (편집 모드가 아닐 때만 표시) */}
-      {!editMode && contextualCategory && (
-        <div className="home-ad-container">
-          <AdSlot category={contextualCategory} placement="home_card" />
-        </div>
-      )}
     </div>
   );
 };

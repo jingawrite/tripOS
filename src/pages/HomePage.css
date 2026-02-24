@@ -41,13 +41,6 @@
   touch-action: none;
 }
 
-.home-ad-container {
-  padding: 16px;
-  max-width: 768px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 /* 모바일 퍼스트 - 기본 스타일은 모바일 */
 @media (min-width: 768px) {
   .home-page {
