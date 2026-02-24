@@ -159,62 +159,72 @@ const ScheduleForm = ({
           <>
             <div className="sf-field">
               <label className="sf-label">이모지</label>
-              <input
-                type="text"
-                value={emoji}
-                onChange={(e) => setEmoji(e.target.value)}
-                className="sf-input"
-                placeholder="이모지를 입력하세요"
-                maxLength={10}
-              />
+              <div className="sf-input-wrapper">
+                <input
+                  type="text"
+                  value={emoji}
+                  onChange={(e) => setEmoji(e.target.value)}
+                  className="sf-input"
+                  placeholder="이모지를 입력하세요"
+                  maxLength={10}
+                />
+              </div>
             </div>
 
             <div className="sf-field">
               <label className="sf-label">상단 텍스트</label>
-              <input
-                type="text"
-                value={topText}
-                onChange={(e) => setTopText(e.target.value.slice(0, 8))}
-                className="sf-input"
-                placeholder="상단 텍스트"
-                maxLength={8}
-              />
+              <div className="sf-input-wrapper">
+                <input
+                  type="text"
+                  value={topText}
+                  onChange={(e) => setTopText(e.target.value.slice(0, 8))}
+                  className="sf-input"
+                  placeholder="상단 텍스트"
+                  maxLength={8}
+                />
+              </div>
               <div className="sf-char-count">{topText.length}/8</div>
             </div>
 
             <div className="sf-field">
               <label className="sf-label">하단 텍스트 <span className="sf-optional">선택</span></label>
-              <input
-                type="text"
-                value={bottomText}
-                onChange={(e) => setBottomText(e.target.value.slice(0, 8))}
-                className="sf-input"
-                placeholder="하단 텍스트"
-                maxLength={8}
-              />
+              <div className="sf-input-wrapper">
+                <input
+                  type="text"
+                  value={bottomText}
+                  onChange={(e) => setBottomText(e.target.value.slice(0, 8))}
+                  className="sf-input"
+                  placeholder="하단 텍스트"
+                  maxLength={8}
+                />
+              </div>
               <div className="sf-char-count">{bottomText.length}/8</div>
             </div>
 
             <div className="sf-field">
               <label className="sf-label">날짜</label>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="sf-input"
-              />
+              <div className="sf-input-wrapper">
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="sf-input sf-date-input"
+                />
+              </div>
             </div>
 
             <div className="sf-field">
               <label className="sf-label">URL <span className="sf-optional">선택</span></label>
               <div className="sf-url-wrapper">
-                <input
-                  type="url"
-                  value={url}
-                  onChange={(e) => setUrl(e.target.value)}
-                  className="sf-input sf-url-input"
-                  placeholder="https://..."
-                />
+                <div className="sf-input-wrapper sf-url-input-wrapper">
+                  <input
+                    type="url"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    className="sf-input sf-url-input"
+                    placeholder="https://..."
+                  />
+                </div>
                 {url && (
                   <button
                     onClick={() => setUrl('')}
