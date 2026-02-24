@@ -47,6 +47,7 @@
   font-weight: 600;
   margin: 0;
   color: #333;
+  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .form-container {
@@ -67,6 +68,7 @@
   font-weight: 500;
   color: #666;
   margin-bottom: 8px;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .form-input {

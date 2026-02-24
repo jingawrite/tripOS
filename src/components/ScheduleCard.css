@@ -1,17 +1,18 @@
 .schedule-card {
   border-radius: 12px;
   background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  padding: 12px;
+  border: 1px dashed #000;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100px;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   position: relative;
   touch-action: none; /* 드래그 중 스크롤 방지 */
   user-select: none; /* 텍스트 선택 방지 */
+  overflow: hidden;
 }
 
 .schedule-card.edit-mode {
@@ -66,22 +67,38 @@
 
 .schedule-emoji {
   font-size: 32px;
-  margin-bottom: 8px;
+  order: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .schedule-top-text {
-  font-size: 12px;
+  font-size: 11px;
   color: #666;
   text-align: center;
-  margin-bottom: 4px;
-  word-break: break-word;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  order: 1;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .schedule-bottom-text {
-  font-size: 12px;
+  font-size: 11px;
   color: #999;
   text-align: center;
-  word-break: break-word;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  order: 3;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 @keyframes wiggle {

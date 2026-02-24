@@ -111,8 +111,8 @@ const HomePage = () => {
       <TopBar />
       
       <div className="title-area">
-        <h1 className="title-main">트립OS</h1>
-        <p className="title-sub">여행 일정을 관리하세요</p>
+        <h1 className="title-main">TRIP OS</h1>
+        <p className="title-sub">TRAVEL CHECK LIST</p>
       </div>
 
       <DndContext

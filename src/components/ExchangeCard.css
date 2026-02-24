@@ -39,6 +39,7 @@
   font-size: 14px;
   font-weight: 600;
   color: #333;
+  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .dropdown-arrow {
@@ -123,6 +124,7 @@
   font-size: 14px;
   font-weight: 500;
   color: #333;
+  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .exchange-rate-content {
@@ -138,11 +140,13 @@
   font-weight: 600;
   color: #333;
   text-align: center;
+  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .loading {
   font-size: 14px;
   color: #666;
+  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .error-message {
