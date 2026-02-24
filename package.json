@@ -8,7 +8,11 @@
     "build": "tsc && vite build",
     "build:gh-pages": "VITE_BASE_PATH=/trip-os/ npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:security": "vitest run --reporter=verbose tests/security/",
+    "audit:deps": "npm audit --audit-level=high"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
@@ -28,8 +32,10 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "jsdom": "^24.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vite-plugin-pwa": "^0.17.4"
+    "vite-plugin-pwa": "^0.17.4",
+    "vitest": "^1.6.0"
   }
 }

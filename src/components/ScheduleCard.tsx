@@ -58,6 +58,7 @@ const ScheduleCard = ({ schedule }: ScheduleCardProps) => {
           onClick={handleDeleteClick}
           className="delete-button"
           type="button"
+          aria-label="일정 삭제"
         >
           −
         </button>

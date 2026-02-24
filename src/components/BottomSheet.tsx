@@ -50,13 +50,14 @@ const BottomSheet = ({ isOpen, onClose }: BottomSheetProps) => {
               key={item.category}
               className="bottom-sheet-menu-item"
               onClick={() => handleMenuItemClick(item.category)}
+              aria-label={`${item.label} 일정 추가`}
             >
               <span className="menu-item-emoji">{item.emoji}</span>
               <span className="menu-item-label">{item.label}</span>
             </button>
           ))}
         </div>
-        <button className="bottom-sheet-close-button" onClick={onClose}>
+        <button className="bottom-sheet-close-button" onClick={onClose} aria-label="닫기">
           ✕
         </button>
       </div>

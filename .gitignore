@@ -12,6 +12,20 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (Secret 관리 - Git 업로드 금지)
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+*.pem
+*.key
+*.cert
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

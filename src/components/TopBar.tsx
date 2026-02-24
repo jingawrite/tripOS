@@ -16,11 +16,29 @@ const TopBar = () => {
         width: '100%',
       }}>
         <button
+          onClick={toggleEditMode}
+          aria-label={editMode ? '편집 완료' : '편집 모드'}
+          style={{
+            padding: '8px 16px',
+            minHeight: '44px',
+            minWidth: '44px',
+            borderRadius: '8px',
+            border: 'none',
+            backgroundColor: editMode ? '#646cff' : '#e0e0e0',
+            color: editMode ? 'white' : '#333',
+            fontSize: '14px',
+            cursor: 'pointer',
+          }}
+        >
+          {editMode ? '완료' : '편집'}
+        </button>
+        <button
           onClick={() => setIsBottomSheetOpen(true)}
           disabled={editMode}
+          aria-label="일정 추가"
           style={{
-            width: '40px',
-            height: '40px',
+            width: '44px',
+            height: '44px',
             borderRadius: '8px',
             border: 'none',
             backgroundColor: editMode ? '#e0e0e0' : '#646cff',
@@ -34,20 +52,6 @@ const TopBar = () => {
           }}
         >
           +
-        </button>
-        <button
-          onClick={toggleEditMode}
-          style={{
-            padding: '8px 16px',
-            borderRadius: '8px',
-            border: 'none',
-            backgroundColor: editMode ? '#646cff' : '#e0e0e0',
-            color: editMode ? 'white' : '#333',
-            fontSize: '14px',
-            cursor: 'pointer',
-          }}
-        >
-          {editMode ? '완료' : '편집'}
         </button>
       </div>
       <BottomSheet
