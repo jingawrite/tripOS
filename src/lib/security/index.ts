@@ -104,25 +104,30 @@ export {
   REQUIRED_SECURITY_HEADERS,
 } from './headers';
 
+// ── 내부 import (initializeSecurity에서 사용) ──
+import { getCsrfToken as _getCsrfToken } from './csrf';
+import { initializeDefaultSession as _initializeDefaultSession } from './auth';
+import { loadAuditLogs as _loadAuditLogs, logAudit as _logAudit } from './auditLog';
+
 /**
  * 보안 모듈 초기화
  * 앱 시작 시 호출하여 기본 보안 설정을 적용
  */
 export const initializeSecurity = (): void => {
   // 1. CSRF 토큰 초기화
-  getCsrfToken();
+  _getCsrfToken();
 
   // 2. 기본 세션 생성 (프론트엔드 전용)
-  initializeDefaultSession();
+  _initializeDefaultSession();
 
   // 3. Audit 로그 로드
-  loadAuditLogs();
+  _loadAuditLogs();
 
   // 4. 보안 이벤트 리스너 등록
   if (typeof window !== 'undefined') {
     // CSP 위반 이벤트 감지
     window.addEventListener('securitypolicyviolation', (event) => {
-      logAudit({
+      _logAudit({
         action: 'SECURITY_XSS_DETECTED',
         details: `CSP Violation: ${event.violatedDirective} - ${event.blockedURI}`,
       });

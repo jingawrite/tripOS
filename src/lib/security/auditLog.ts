@@ -56,7 +56,7 @@ const AUDIT_CONFIG = {
   /** 스토리지 키 */
   STORAGE_KEY: 'tripos.security.audit',
   /** Production 환경 여부 */
-  IS_PRODUCTION: import.meta.env.PROD,
+  IS_PRODUCTION: (import.meta as { env?: { MODE?: string } }).env?.MODE === 'production',
 };
 
 // ── 심각도 매핑 ──
