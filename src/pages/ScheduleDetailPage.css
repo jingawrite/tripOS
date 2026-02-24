@@ -40,7 +40,6 @@
   font-weight: 600;
   margin: 0;
   color: #333;
-  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .detail-content {
@@ -66,7 +65,6 @@
   color: #333;
   margin-bottom: 8px;
   text-align: center;
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .detail-bottom-text {
@@ -74,14 +72,12 @@
   color: #666;
   margin-bottom: 24px;
   text-align: center;
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .detail-date {
   font-size: 16px;
   color: #999;
   margin-bottom: 24px;
-  font-family: 'DotGothic16', 'Pretendard Variable', Pretendard, sans-serif;
 }
 
 .detail-url-button {
